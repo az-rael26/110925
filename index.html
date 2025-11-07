@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Sheina Mae</title>
+<title>Happy Birthday Sheina Mae!!</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -110,7 +110,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(6px);
-    height: auto;
   }
 
   .next-btn, .back-btn {
@@ -156,6 +155,7 @@
 </head>
 <body>
 
+<!-- PAGE 1 -->
 <div id="page1" class="page active">
   <h1>Happy Birthday Sheina Mae!</h1>
   <div class="encourage" id="encourage"></div>
@@ -163,27 +163,40 @@
   <div class="candles" id="candles"></div>
 </div>
 
+<!-- PAGE 2 -->
 <div id="page2" class="page">
  <div class="message fancy-message">
 Happiest birthday to the one who has my heart in ways I can’t fully explain. 💖<br><br>
 You have this way of talking about things that leaves me amazed every time because it's always new, may it be perspective in life or just facts that I'm not aware of. I’m truly grateful for all the warmth and happiness you bring in my life.  <br><br>
-Life is hitting hard for you these past few days and there are plenty of times na gusto ko nalang magteleport bigla diyan just to give you comfort personally kasi may times talaga na di sapat ang comforting words lang and I know I'm very bad at it. 2025 has been a hell of year maraming disappointments, setbacks, and shortcomings and I'm very proud of you for continuing to persevere amidst the fierce waves crashing on. I may not show it but I'm always proud of how you're still standing against the heavy pressure life is giving you. I admire how you keep enduring and pushing forward, it challenges me to keep doing better too. You've etched a mark on me, na kapag nagshe-share ka ng hardships mo gusto ko nalang magwala kasi bakit ganon nangyayari?! Haysss. Hindi mo deserve ang mga nangyayari sayo awat na sana si Lord sa strongest soldier na 'yan.  
+Life is hitting hard for you these past few days and there are plenty of times na gusto ko nalang magteleport bigla diyan just to give you comfort personally kasi may times talaga na di sapat ang comforting words lang and I know I'm very bad at it. 2025 has been a hell of year maraming disappointments, setbacks, and shortcomings and I'm very proud of you for continuing to persevere amidst the fierce waves crashing on. I may not show it but I'm always proud of how you're still standing against the heavy pressure life is giving you. I admire how you keep enduring and pushing forward, it challenges me to keep doing better too. You've etched a mark on me, na kapag nagshe-share ka ng hardships mo gusto ko nalang magwala kasi bakit ganon nangyayari?! Haysss. Hindi mo deserve ang mga nangyayari sayo awat na sana si Lord sa strongest soldier na 'yan.
   </div>
-  <button class="next-btn" id="nextBtn">Next</button>
+  <button class="next-btn" id="nextBtn2">Next</button>
 </div>
 
+<!-- PAGE 3 -->
 <div id="page3" class="page">
   <div class="fancy-message">
-    Your second message goes here... 🌷
+   May gift ako sayo and andyan na yun sa mahiwagang kamay nila HWHAUAHAHA I really tried na maging gawa ko pero hindi talaga kaya ng powers. Kwento ko nalang sayo if dumating na. I hope magustuhan mo yun.
   </div>
-  <button class="back-btn" id="backBtn">Go Back</button>
+  <button class="back-btn" id="backBtn3">Go Back</button>
+  <button class="next-btn" id="nextBtn3">Next</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+  <div class="fancy-message">
+    Happy Birthday Bebii! 🎉 <br><br>
+    Thank you for always being your genuine self, Bebii.  I hope this little thing brightens your day even just a bit. Continue smiling and chasing what makes your heart full — you deserve every piece of happiness coming your way.  I’m always here for you, through good days and bad.
+  </div>
+  <button class="back-btn" id="backBtn4">Go Back</button>
 </div>
 
 <script>
 const pages = [
   document.getElementById('page1'),
   document.getElementById('page2'),
-  document.getElementById('page3')
+  document.getElementById('page3'),
+  document.getElementById('page4')
 ];
 function showPage(index) {
   pages.forEach(p => {
@@ -194,15 +207,14 @@ function showPage(index) {
   pages[index].style.display = 'flex';
 }
 
+// Candle logic
 const tapBtn = document.getElementById('tapBtn');
 const candleContainer = document.getElementById('candles');
 const encourageText = document.getElementById('encourage');
-
 let tapCount = 0;
 const maxCandles = 19;
-
 const messages = [
-"Tap! Tap!", "(⁠｡⁠•̀⁠ᴗ⁠-⁠)⁠💖!", "Keep going! ꉂ(˵˃ ᗜ ˂˵)",
+  "Tap! Tap!", "(⁠｡⁠•̀⁠ᴗ⁠-⁠)⁠💖!", "Keep going! ꉂ(˵˃ ᗜ ˂˵)",
   "(⁠≧⁠▽⁠≦⁠)", "Malapit na mami😆", "Dami na candless (˶˃ᆺ˂˶)",
   "Pang-ilan na ba?", "Tap more!!", "(﹡ˆ﹀ˆ﹡)♡",
   "Amazing! Keep tapping! 🎉", "Almost there!💖", "<⁠(⁠￣⁠︶⁠￣⁠)⁠>✨",
@@ -210,100 +222,97 @@ const messages = [
   "૮₍˃̵֊ ˂̵ ₎ა", "One more tap!", "Yey! ૮₍˶ᵔ ᵕ ᵔ˶ ₎ა"
 ];
 tapBtn.addEventListener('click', () => {
-  if(tapCount < maxCandles){
+  if (tapCount < maxCandles) {
     tapCount++;
     const candle = document.createElement('div');
     candle.classList.add('candle');
-    const width = 12 + Math.random()*4;
-    const height = 30 + Math.random()*20;
-    candle.style.width = width+'px';
-    candle.style.height = height+'px';
-
+    const width = 12 + Math.random() * 4;
+    const height = 30 + Math.random() * 20;
+    candle.style.width = width + 'px';
+    candle.style.height = height + 'px';
     const flame = document.createElement('div');
     flame.classList.add('flame');
     candle.appendChild(flame);
-
-    if(tapCount % 2 === 0){
-      candleContainer.appendChild(candle);
-    } else {
-      candleContainer.prepend(candle);
-    }
-
-    const rotation = (Math.random()-0.5)*10;
-    const offsetY = (Math.random()-0.5)*6;
-    setTimeout(()=>{
+    if (tapCount % 2 === 0) candleContainer.appendChild(candle);
+    else candleContainer.prepend(candle);
+    const rotation = (Math.random() - 0.5) * 10;
+    const offsetY = (Math.random() - 0.5) * 6;
+    setTimeout(() => {
       candle.style.transform = `translateY(${offsetY}px) rotate(${rotation}deg) scale(1)`;
-    },50);
-
-    encourageText.textContent = messages[tapCount-1];
-  } else if(tapCount === maxCandles){
+    }, 50);
+    encourageText.textContent = messages[tapCount - 1];
+  } else if (tapCount === maxCandles) {
     tapCount++;
     showPage(1);
   }
 });
 
-document.getElementById('nextBtn').addEventListener('click',()=>showPage(2));
-document.getElementById('backBtn').addEventListener('click',()=>showPage(1));
+// Navigation
+document.getElementById('nextBtn2').addEventListener('click', () => showPage(2));
+document.getElementById('backBtn3').addEventListener('click', () => showPage(1));
+document.getElementById('nextBtn3').addEventListener('click', () => showPage(3));
+document.getElementById('backBtn4').addEventListener('click', () => showPage(2));
 
-// Star + Confetti (unchanged)
-function createStar(){
-  if(!pages[0].classList.contains('active')) return;
-  const star=document.createElement('div');
+// Stars (page 1) and Confetti (page 2–4)
+function createStar() {
+  if (!pages[0].classList.contains('active')) return;
+  const star = document.createElement('div');
   star.classList.add('star');
-  const size=6+Math.random()*10;
-  star.style.width=size+'px';
-  star.style.height=size+'px';
-  star.style.left=Math.random()*(window.innerWidth-size)+'px';
-  const duration=4000+Math.random()*4000;
-  let startTime=null;
-  const sway=20;
-  const rotSpeed=(Math.random()*2-1)*0.1;
-  function animateStar(t){
-    if(!startTime) startTime=t;
-    const elapsed=t-startTime;
-    const y=(elapsed/duration)*(window.innerHeight+40);
-    const xOffset=Math.sin(elapsed/500)*sway;
-    const rotation=elapsed*rotSpeed;
-    star.style.transform=`translate(${xOffset}px, ${y}px) rotate(${rotation}rad)`;
-    if(y<window.innerHeight+40) requestAnimationFrame(animateStar);
+  const size = 6 + Math.random() * 10;
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.left = Math.random() * (window.innerWidth - size) + 'px';
+  const duration = 4000 + Math.random() * 4000;
+  let startTime = null;
+  const sway = 20;
+  const rotSpeed = (Math.random() * 2 - 1) * 0.1;
+  function animateStar(t) {
+    if (!startTime) startTime = t;
+    const elapsed = t - startTime;
+    const y = (elapsed / duration) * (window.innerHeight + 40);
+    const xOffset = Math.sin(elapsed / 500) * sway;
+    const rotation = elapsed * rotSpeed;
+    star.style.transform = `translate(${xOffset}px, ${y}px) rotate(${rotation}rad)`;
+    if (y < window.innerHeight + 40) requestAnimationFrame(animateStar);
     else star.remove();
   }
   requestAnimationFrame(animateStar);
   document.body.appendChild(star);
 }
-setInterval(createStar,200);
+setInterval(createStar, 200);
 
-function createConfetti(){
-  if(!pages[1].classList.contains('active') && !pages[2].classList.contains('active')) return;
-  const confetti=document.createElement('div');
+function createConfetti() {
+  if (!pages[1].classList.contains('active') &&
+      !pages[2].classList.contains('active') &&
+      !pages[3].classList.contains('active')) return;
+  const confetti = document.createElement('div');
   confetti.classList.add('confetti');
-  const sizeW=5+Math.random()*10;
-  const sizeH=8+Math.random()*12;
-  confetti.style.width=sizeW+'px';
-  confetti.style.height=sizeH+'px';
-  confetti.style.background=['#f94144','#f3722c','#f9c74f','#90be6d','#577590','#f8961e','#43aa8b'][Math.floor(Math.random()*7)];
-  confetti.style.left=Math.random()*window.innerWidth+'px';
-  confetti.style.top='-10px';
-  confetti.style.opacity=0.9;
-  confetti.style.transform=`rotate(${Math.random()*360}deg)`;
-  const duration=3000+Math.random()*2000;
-  const sway=20+Math.random()*20;
-  let startTime=null;
-  function animateConfetti(t){
-    if(!startTime) startTime=t;
-    const elapsed=t-startTime;
-    const y=(elapsed/duration)*(window.innerHeight+20);
-    const xOffset=Math.sin(elapsed/300)*sway;
-    const rotation=elapsed*0.01*(Math.random()*2-1);
-    confetti.style.transform=`translate(${xOffset}px, ${y}px) rotate(${rotation}rad)`;
-    if(y<window.innerHeight+20) requestAnimationFrame(animateConfetti);
+  const sizeW = 5 + Math.random() * 10;
+  const sizeH = 8 + Math.random() * 12;
+  confetti.style.width = sizeW + 'px';
+  confetti.style.height = sizeH + 'px';
+  confetti.style.background = ['#f94144','#f3722c','#f9c74f','#90be6d','#577590','#f8961e','#43aa8b'][Math.floor(Math.random() * 7)];
+  confetti.style.left = Math.random() * window.innerWidth + 'px';
+  confetti.style.top = '-10px';
+  confetti.style.opacity = 0.9;
+  confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+  const duration = 3000 + Math.random() * 2000;
+  const sway = 20 + Math.random() * 20;
+  let startTime = null;
+  function animateConfetti(t) {
+    if (!startTime) startTime = t;
+    const elapsed = t - startTime;
+    const y = (elapsed / duration) * (window.innerHeight + 20);
+    const xOffset = Math.sin(elapsed / 300) * sway;
+    const rotation = elapsed * 0.01 * (Math.random() * 2 - 1);
+    confetti.style.transform = `translate(${xOffset}px, ${y}px) rotate(${rotation}rad)`;
+    if (y < window.innerHeight + 20) requestAnimationFrame(animateConfetti);
     else confetti.remove();
   }
   requestAnimationFrame(animateConfetti);
   document.body.appendChild(confetti);
 }
-setInterval(createConfetti,100);
+setInterval(createConfetti, 100);
 </script>
 </body>
 </html>
-
