@@ -160,6 +160,50 @@
     );
     opacity: 0.9;
   }
+ /* === STARS === */
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.star {
+  position: absolute;
+  background: yellow;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatStar 4s linear infinite;
+}
+@keyframes floatStar {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* === CONFETTI === */
+.confetti-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  animation: fallConfetti 4s linear infinite;
+}
+@keyframes fallConfetti {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
 
   .confetti { opacity: 0.9; }
 </style>
@@ -330,6 +374,44 @@ function createConfetti(){
   document.body.appendChild(confetti);
 }
 setInterval(createConfetti,100);
+ // === STAR EFFECT FOR PAGE 1 ===
+function createStars() {
+  const starsContainer = document.createElement('div');
+  starsContainer.classList.add('stars-container');
+  document.getElementById('page1').appendChild(starsContainer);
+
+  for (let i = 0; i < 40; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.width = `${Math.random() * 3 + 2}px`;
+    star.style.height = star.style.width;
+    star.style.animationDelay = `${Math.random() * 2}s`;
+    starsContainer.appendChild(star);
+  }
+}
+createStars();
+
+// === CONFETTI EFFECT FOR PAGE 2 & 3 ===
+function createConfetti(pageId) {
+  const confettiContainer = document.createElement('div');
+  confettiContainer.classList.add('confetti-container');
+  document.getElementById(pageId).appendChild(confettiContainer);
+
+  for (let i = 0; i < 60; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = `${Math.random() * 100}%`;
+    confetti.style.animationDelay = `${Math.random() * 3}s`;
+    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 60%)`;
+    confettiContainer.appendChild(confetti);
+  }
+}
+
+createConfetti('page2');
+createConfetti('page3');
+
 </script>
 </body>
 </html>
